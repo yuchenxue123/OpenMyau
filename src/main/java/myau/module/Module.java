@@ -13,15 +13,23 @@ public abstract class Module {
     protected int key;
     protected boolean hidden;
 
-    public Module(String name, boolean enabled) {
-        this(name, enabled, false);
+    private final Category category;
+
+    public Module(String name, Category category, boolean enabled) {
+        this(name, category, enabled, false);
     }
 
-    public Module(String name, boolean enabled, boolean hidden) {
+    public Module(String name, Category category, boolean enabled, boolean hidden) {
         this.name = name;
         this.enabled = this.defaultEnabled = enabled;
         this.key = this.defaultKey = 0;
         this.hidden = this.defaultHidden = hidden;
+
+        this.category = category;
+    }
+
+    public Category getCategory() {
+        return this.category;
     }
 
     public String getName() {

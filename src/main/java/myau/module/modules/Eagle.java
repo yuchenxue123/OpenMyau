@@ -5,6 +5,7 @@ import myau.event.types.EventType;
 import myau.event.types.Priority;
 import myau.events.MoveInputEvent;
 import myau.events.TickEvent;
+import myau.module.Category;
 import myau.module.Module;
 import myau.util.ItemUtil;
 import myau.util.MoveUtil;
@@ -41,7 +42,7 @@ public class Eagle extends Module {
     }
 
     public Eagle() {
-        super("Eagle", false);
+        super("Eagle", Category.PLAYER, false);
     }
 
     @EventTarget(Priority.LOWEST)

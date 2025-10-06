@@ -8,6 +8,7 @@ import myau.events.Render3DEvent;
 import myau.events.TickEvent;
 import myau.mixin.IAccessorPlayerControllerMP;
 import myau.mixin.IAccessorRenderManager;
+import myau.module.Category;
 import myau.module.Module;
 import myau.util.ItemUtil;
 import myau.util.RenderUtil;
@@ -77,7 +78,7 @@ public class LagRange extends Module {
     }
 
     public LagRange() {
-        super("LagRange", false);
+        super("LagRange", Category.COMBAT, false);
     }
 
     @EventTarget(Priority.LOW)

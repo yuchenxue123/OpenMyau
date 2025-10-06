@@ -6,6 +6,7 @@ import myau.event.EventTarget;
 import myau.event.types.EventType;
 import myau.events.PacketEvent;
 import myau.events.Render2DEvent;
+import myau.module.Category;
 import myau.module.Module;
 import myau.util.ColorUtil;
 import myau.util.RenderUtil;
@@ -106,7 +107,7 @@ public class TargetHUD extends Module {
     }
 
     public TargetHUD() {
-        super("TargetHUD", false, true);
+        super("TargetHUD", Category.RENDER, false, true);
     }
 
     @EventTarget

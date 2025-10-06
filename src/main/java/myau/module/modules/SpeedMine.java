@@ -4,6 +4,7 @@ import myau.event.EventTarget;
 import myau.event.types.EventType;
 import myau.events.TickEvent;
 import myau.mixin.IAccessorPlayerControllerMP;
+import myau.module.Category;
 import myau.module.Module;
 import myau.property.properties.IntProperty;
 import myau.property.properties.PercentProperty;
@@ -16,7 +17,7 @@ public class SpeedMine extends Module {
     public final IntProperty delay = new IntProperty("delay", 0, 0, 4);
 
     public SpeedMine() {
-        super("SpeedMine", false);
+        super("SpeedMine", Category.PLAYER, false);
     }
 
     @EventTarget

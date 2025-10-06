@@ -7,6 +7,7 @@ import myau.event.types.Priority;
 import myau.events.LivingUpdateEvent;
 import myau.events.PlayerUpdateEvent;
 import myau.events.RightClickMouseEvent;
+import myau.module.Category;
 import myau.module.Module;
 import myau.util.BlockUtil;
 import myau.util.ItemUtil;
@@ -35,7 +36,7 @@ public class NoSlow extends Module {
     public final BooleanProperty bowSprint = new BooleanProperty("bow-sprint", true, () -> this.bowMode.getValue() != 0);
 
     public NoSlow() {
-        super("NoSlow", false);
+        super("NoSlow", Category.MOVEMENT, false);
     }
 
     public boolean isSwordActive() {

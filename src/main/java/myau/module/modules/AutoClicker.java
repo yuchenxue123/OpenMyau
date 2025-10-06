@@ -5,6 +5,7 @@ import myau.event.types.EventType;
 import myau.event.types.Priority;
 import myau.events.LeftClickMouseEvent;
 import myau.events.TickEvent;
+import myau.module.Category;
 import myau.module.Module;
 import myau.util.ItemUtil;
 import myau.util.KeyBindUtil;
@@ -60,7 +61,7 @@ public class AutoClicker extends Module {
     }
 
     public AutoClicker() {
-        super("AutoClicker", false);
+        super("AutoClicker", Category.COMBAT, false);
     }
 
     @EventTarget

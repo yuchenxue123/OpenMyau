@@ -5,6 +5,7 @@ import myau.event.EventTarget;
 import myau.events.Render3DEvent;
 import myau.mixin.IAccessorMinecraft;
 import myau.mixin.IAccessorRenderManager;
+import myau.module.Category;
 import myau.module.Module;
 import myau.util.RenderUtil;
 import myau.property.properties.BooleanProperty;
@@ -27,7 +28,7 @@ public class ChestESP extends Module {
     public final BooleanProperty tracers;
 
     public ChestESP() {
-        super("ChestESP", false);
+        super("ChestESP", Category.RENDER, false);
         this.color = new ColorProperty("color", new Color(255, 170, 0).getRGB());
         this.opacity = new PercentProperty("opacity", 100);
         this.tracers = new BooleanProperty("tracers", false);

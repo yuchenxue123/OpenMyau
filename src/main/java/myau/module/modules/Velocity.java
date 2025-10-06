@@ -8,6 +8,7 @@ import myau.event.EventTarget;
 import myau.event.types.EventType;
 import myau.events.*;
 import myau.mixin.IAccessorEntity;
+import myau.module.Category;
 import myau.module.Module;
 import myau.util.ChatUtil;
 import myau.util.MoveUtil;
@@ -51,7 +52,7 @@ public class Velocity extends Module {
     }
 
     public Velocity() {
-        super("Velocity", false);
+        super("Velocity", Category.COMBAT, false);
     }
 
     @EventTarget

@@ -6,6 +6,7 @@ import myau.event.types.EventType;
 import myau.event.types.Priority;
 import myau.events.*;
 import myau.management.RotationState;
+import myau.module.Category;
 import myau.module.Module;
 import myau.util.*;
 import myau.property.properties.*;
@@ -49,7 +50,7 @@ public class AntiFireball extends Module {
     }
 
     public AntiFireball() {
-        super("AntiFireball", false);
+        super("AntiFireball", Category.COMBAT, false);
     }
 
     @EventTarget

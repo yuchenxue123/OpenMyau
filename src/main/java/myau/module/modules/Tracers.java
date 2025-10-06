@@ -6,6 +6,7 @@ import myau.event.EventTarget;
 import myau.events.Render2DEvent;
 import myau.events.Render3DEvent;
 import myau.mixin.IAccessorMinecraft;
+import myau.module.Category;
 import myau.module.Module;
 import myau.util.RenderUtil;
 import myau.util.RotationUtil;
@@ -76,7 +77,7 @@ public class Tracers extends Module {
     }
 
     public Tracers() {
-        super("Tracers", false);
+        super("Tracers", Category.RENDER, false);
     }
 
     @EventTarget

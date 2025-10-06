@@ -4,6 +4,7 @@ import myau.event.EventTarget;
 import myau.event.types.EventType;
 import myau.events.StrafeEvent;
 import myau.events.UpdateEvent;
+import myau.module.Category;
 import myau.module.Module;
 import myau.util.KeyBindUtil;
 import myau.util.MoveUtil;
@@ -17,7 +18,7 @@ public class Fly extends Module {
     public final FloatProperty vSpeed = new FloatProperty("vertical-speed", 1.0F, 0.0F, 100.0F);
 
     public Fly() {
-        super("Fly", false);
+        super("Fly", Category.MOVEMENT, false);
     }
 
     @EventTarget

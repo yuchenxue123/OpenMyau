@@ -1,5 +1,6 @@
 package myau.module.modules;
 
+import myau.module.Category;
 import myau.module.Module;
 import myau.property.properties.BooleanProperty;
 import net.minecraft.block.Block;
@@ -14,7 +15,7 @@ public class AntiObbyTrap extends Module {
     public final BooleanProperty setAir = new BooleanProperty("set-air", true);
 
     public AntiObbyTrap() {
-        super("AntiObbyTrap", false);
+        super("AntiObbyTrap", Category.COMBAT, false);
     }
 
     public boolean isInsideBlock(World world, BlockPos blockPos) {

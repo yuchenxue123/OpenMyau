@@ -3,6 +3,7 @@ package myau.module.modules;
 import myau.Myau;
 import myau.event.EventTarget;
 import myau.events.KeyEvent;
+import myau.module.Category;
 import myau.module.Module;
 import myau.util.ChatUtil;
 import net.minecraft.client.Minecraft;
@@ -13,7 +14,7 @@ public class MCF extends Module {
     private static final Minecraft mc = Minecraft.getMinecraft();
 
     public MCF() {
-        super("MCF", false, true);
+        super("MCF", Category.MISC, false, true);
     }
 
     @EventTarget

@@ -9,6 +9,7 @@ import myau.event.types.Priority;
 import myau.events.*;
 import myau.management.RotationState;
 import myau.mixin.IAccessorPlayerControllerMP;
+import myau.module.Category;
 import myau.module.Module;
 import myau.util.*;
 import myau.property.properties.*;
@@ -316,7 +317,7 @@ public class KillAura extends Module {
     }
 
     public KillAura() {
-        super("KillAura", false);
+        super("KillAura", Category.COMBAT, false);
         this.lastTickProcessed = 0;
         this.mode = new ModeProperty("mode", 0, new String[]{"SINGLE", "SWITCH"});
         this.sort = new ModeProperty("sort", 0, new String[]{"DISTANCE", "HEALTH", "HURT_TIME", "FOV"});

@@ -9,6 +9,7 @@ import myau.events.Render3DEvent;
 import myau.events.ResizeEvent;
 import myau.mixin.IAccessorEntityRenderer;
 import myau.mixin.IAccessorRenderManager;
+import myau.module.Category;
 import myau.module.Module;
 import myau.util.ColorUtil;
 import myau.util.RenderUtil;
@@ -86,7 +87,7 @@ public class ESP extends Module {
     }
 
     public ESP() {
-        super("ESP", false);
+        super("ESP", Category.RENDER, false);
     }
 
     public boolean isOutlineEnabled() {

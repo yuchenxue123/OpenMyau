@@ -1,5 +1,6 @@
 package myau.module.modules;
 
+import myau.module.Category;
 import myau.module.Module;
 import myau.property.properties.BooleanProperty;
 import myau.property.properties.PercentProperty;
@@ -12,7 +13,7 @@ public class KeepSprint extends Module {
     public final BooleanProperty reachOnly = new BooleanProperty("reach-only", false);
 
     public KeepSprint() {
-        super("KeepSprint", false);
+        super("KeepSprint", Category.COMBAT, false);
     }
 
     public boolean shouldKeepSprint() {

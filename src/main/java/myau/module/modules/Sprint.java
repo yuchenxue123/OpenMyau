@@ -3,6 +3,7 @@ package myau.module.modules;
 import myau.event.EventTarget;
 import myau.events.TickEvent;
 import myau.mixin.IAccessorEntityLivingBase;
+import myau.module.Category;
 import myau.module.Module;
 import myau.util.KeyBindUtil;
 import myau.property.properties.BooleanProperty;
@@ -16,7 +17,7 @@ public class Sprint extends Module {
     public final BooleanProperty foxFix = new BooleanProperty("fov-fix", true);
 
     public Sprint() {
-        super("Sprint", true, true);
+        super("Sprint", Category.MOVEMENT, true, true);
     }
 
     public boolean shouldApplyFovFix(IAttributeInstance attribute) {

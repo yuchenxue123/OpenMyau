@@ -5,6 +5,7 @@ import myau.event.types.EventType;
 import myau.event.types.Priority;
 import myau.events.TickEvent;
 import myau.mixin.IAccessorEntityLivingBase;
+import myau.module.Category;
 import myau.module.Module;
 import myau.property.properties.IntProperty;
 import net.minecraft.client.Minecraft;
@@ -14,7 +15,7 @@ public class NoJumpDelay extends Module {
     public final IntProperty delay = new IntProperty("delay", 3, 0, 8);
 
     public NoJumpDelay() {
-        super("NoJumpDelay", false);
+        super("NoJumpDelay", Category.PLAYER, false);
     }
 
     @EventTarget(Priority.HIGHEST)

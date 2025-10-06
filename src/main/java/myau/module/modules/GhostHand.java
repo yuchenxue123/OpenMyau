@@ -1,5 +1,6 @@
 package myau.module.modules;
 
+import myau.module.Category;
 import myau.module.Module;
 import myau.util.ItemUtil;
 import myau.util.TeamUtil;
@@ -12,7 +13,7 @@ public class GhostHand extends Module {
     public final BooleanProperty ignoreWeapons = new BooleanProperty("ignore-weapons", false);
 
     public GhostHand() {
-        super("GhostHand", false);
+        super("GhostHand", Category.MISC, false);
     }
 
     public boolean shouldSkip(Entity entity) {

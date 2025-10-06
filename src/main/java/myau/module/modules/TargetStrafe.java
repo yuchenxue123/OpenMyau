@@ -7,6 +7,7 @@ import myau.event.types.Priority;
 import myau.events.Render3DEvent;
 import myau.events.StrafeEvent;
 import myau.events.UpdateEvent;
+import myau.module.Category;
 import myau.module.Module;
 import myau.util.*;
 import myau.property.properties.*;
@@ -91,7 +92,7 @@ public class TargetStrafe extends Module {
     }
 
     public TargetStrafe() {
-        super("TargetStrafe", false);
+        super("TargetStrafe", Category.MOVEMENT, false);
     }
 
     public float getTargetYaw() {

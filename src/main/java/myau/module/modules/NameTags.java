@@ -5,6 +5,7 @@ import myau.enums.ChatColors;
 import myau.event.EventTarget;
 import myau.events.Render3DEvent;
 import myau.mixin.IAccessorRenderManager;
+import myau.module.Category;
 import myau.module.Module;
 import myau.util.ColorUtil;
 import myau.util.RenderUtil;
@@ -65,7 +66,7 @@ public class NameTags extends Module {
     public final BooleanProperty bots = new BooleanProperty("bots", false);
 
     public NameTags() {
-        super("NameTags", false);
+        super("NameTags", Category.RENDER, false);
     }
 
     public boolean shouldRenderTags(EntityLivingBase entityLivingBase) {

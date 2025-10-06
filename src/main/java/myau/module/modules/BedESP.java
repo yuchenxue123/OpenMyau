@@ -4,6 +4,7 @@ import myau.Myau;
 import myau.event.EventTarget;
 import myau.events.Render3DEvent;
 import myau.mixin.IAccessorRenderManager;
+import myau.module.Category;
 import myau.module.Module;
 import myau.util.RenderUtil;
 import myau.property.properties.*;
@@ -60,7 +61,7 @@ public class BedESP extends Module {
     }
 
     public BedESP() {
-        super("BedESP", false);
+        super("BedESP", Category.RENDER, false);
         this.customColor = new ColorProperty("custom-color", (int) 8085714755840333141L, () -> this.color.getValue() == 0);
         this.opacity = new PercentProperty("opacity", 25);
         this.outline = new BooleanProperty("outline", false);

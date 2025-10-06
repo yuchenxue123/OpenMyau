@@ -9,6 +9,7 @@ import myau.events.LoadWorldEvent;
 import myau.events.PacketEvent;
 import myau.events.Render2DEvent;
 import myau.events.TickEvent;
+import myau.module.Category;
 import myau.module.Module;
 import myau.util.ChatUtil;
 import myau.util.ColorUtil;
@@ -98,7 +99,7 @@ public class BedTracker extends Module {
     }
 
     public BedTracker() {
-        super("BedTracker", false, true);
+        super("BedTracker", Category.RENDER, false, true);
         this.executor = Executors.newScheduledThreadPool(1);
         this.alertCooldowns = new LinkedHashMap<>();
         this.trackedPearls = new LinkedHashSet<>();

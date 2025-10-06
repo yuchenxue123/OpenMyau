@@ -7,6 +7,7 @@ import myau.event.EventTarget;
 import myau.event.types.Priority;
 import myau.events.KeyEvent;
 import myau.events.PlayerUpdateEvent;
+import myau.module.Category;
 import myau.module.Module;
 import myau.util.PlayerUtil;
 import myau.util.RandomUtil;
@@ -37,7 +38,7 @@ public class AntiVoid extends Module {
     }
 
     public AntiVoid() {
-        super("AntiVoid", false);
+        super("AntiVoid", Category.PLAYER, false);
     }
 
     @EventTarget(Priority.LOWEST)

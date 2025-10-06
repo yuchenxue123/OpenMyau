@@ -8,6 +8,7 @@ import myau.event.types.Priority;
 import myau.events.*;
 import myau.management.RotationState;
 import myau.mixin.IAccessorPlayerControllerMP;
+import myau.module.Category;
 import myau.module.Module;
 import myau.util.*;
 import myau.property.properties.FloatProperty;
@@ -55,7 +56,7 @@ public class LongJump extends Module {
     }
 
     public LongJump() {
-        super("LongJump", false);
+        super("LongJump", Category.MOVEMENT, false);
     }
 
     public boolean isAutoMode() {

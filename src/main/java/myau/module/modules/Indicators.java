@@ -3,6 +3,7 @@ package myau.module.modules;
 import myau.enums.ChatColors;
 import myau.event.EventTarget;
 import myau.events.Render2DEvent;
+import myau.module.Category;
 import myau.module.Module;
 import myau.util.RenderUtil;
 import myau.util.RotationUtil;
@@ -79,7 +80,7 @@ public class Indicators extends Module {
     }
 
     public Indicators() {
-        super("Indicators", false, true);
+        super("Indicators", Category.RENDER, false, true);
     }
 
     @EventTarget

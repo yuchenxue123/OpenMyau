@@ -5,6 +5,7 @@ import myau.event.types.EventType;
 import myau.event.types.Priority;
 import myau.events.MoveInputEvent;
 import myau.events.PacketEvent;
+import myau.module.Category;
 import myau.module.Module;
 import myau.util.TimerUtil;
 import myau.property.properties.FloatProperty;
@@ -31,7 +32,7 @@ public class Wtap extends Module {
     }
 
     public Wtap() {
-        super("WTap", false);
+        super("WTap", Category.COMBAT, false);
     }
 
     @EventTarget(Priority.LOWEST)

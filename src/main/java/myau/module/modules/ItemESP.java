@@ -4,6 +4,7 @@ import myau.enums.ChatColors;
 import myau.event.EventTarget;
 import myau.events.Render3DEvent;
 import myau.mixin.IAccessorRenderManager;
+import myau.module.Category;
 import myau.module.Module;
 import myau.util.RenderUtil;
 import myau.util.TeamUtil;
@@ -104,7 +105,7 @@ public class ItemESP extends Module {
     }
 
     public ItemESP() {
-        super("ItemESP", false);
+        super("ItemESP", Category.RENDER, false);
     }
 
     @EventTarget

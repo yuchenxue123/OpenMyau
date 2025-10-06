@@ -5,6 +5,7 @@ import myau.event.EventTarget;
 import myau.event.types.EventType;
 import myau.events.SafeWalkEvent;
 import myau.events.UpdateEvent;
+import myau.module.Category;
 import myau.module.Module;
 import myau.util.ItemUtil;
 import myau.util.MoveUtil;
@@ -40,7 +41,7 @@ public class SafeWalk extends Module {
     }
 
     public SafeWalk() {
-        super("SafeWalk", false);
+        super("SafeWalk", Category.MOVEMENT, false);
     }
 
     @EventTarget

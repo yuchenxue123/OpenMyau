@@ -10,6 +10,7 @@ import myau.events.PacketEvent;
 import myau.events.TickEvent;
 import myau.mixin.IAccessorC03PacketPlayer;
 import myau.mixin.IAccessorMinecraft;
+import myau.module.Category;
 import myau.module.Module;
 import myau.util.*;
 import myau.property.properties.FloatProperty;
@@ -36,7 +37,7 @@ public class NoFall extends Module {
     }
 
     public NoFall() {
-        super("NoFall", false);
+        super("NoFall", Category.PLAYER, false);
     }
 
     @EventTarget(Priority.HIGH)

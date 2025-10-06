@@ -4,6 +4,7 @@ import myau.event.EventTarget;
 import myau.event.types.Priority;
 import myau.events.*;
 import myau.mixin.IAccessorPlayerControllerMP;
+import myau.module.Category;
 import myau.module.Module;
 import myau.util.PacketUtil;
 import myau.util.TimerUtil;
@@ -48,7 +49,7 @@ public class AutoHeal extends Module {
     }
 
     public AutoHeal() {
-        super("AutoHeal", false);
+        super("AutoHeal", Category.COMBAT, false);
     }
 
     public boolean isSwitching() {

@@ -5,6 +5,7 @@ import myau.event.types.EventType;
 import myau.events.PickEvent;
 import myau.events.RaytraceEvent;
 import myau.events.TickEvent;
+import myau.module.Category;
 import myau.module.Module;
 import myau.property.properties.FloatProperty;
 import myau.property.properties.PercentProperty;
@@ -22,7 +23,7 @@ public class Reach extends Module {
     public final PercentProperty chance = new PercentProperty("chance", 100);
 
     public Reach() {
-        super("Reach", false);
+        super("Reach", Category.COMBAT, false);
     }
 
     @EventTarget

@@ -3,6 +3,7 @@ package myau.module.modules;
 import myau.event.EventTarget;
 import myau.event.types.EventType;
 import myau.events.TickEvent;
+import myau.module.Category;
 import myau.module.Module;
 import myau.util.ItemUtil;
 import myau.util.KeyBindUtil;
@@ -21,7 +22,7 @@ public class AutoTool extends Module {
     public final BooleanProperty sneakOnly = new BooleanProperty("sneak-only", true);
 
     public AutoTool() {
-        super("AutoTool", false);
+        super("AutoTool", Category.PLAYER, false);
     }
 
     @EventTarget

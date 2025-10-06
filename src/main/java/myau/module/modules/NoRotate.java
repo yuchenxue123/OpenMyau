@@ -4,6 +4,7 @@ import myau.event.EventTarget;
 import myau.event.types.EventType;
 import myau.events.LoadWorldEvent;
 import myau.events.PacketEvent;
+import myau.module.Category;
 import myau.module.Module;
 import myau.util.PacketUtil;
 import myau.util.RandomUtil;
@@ -19,7 +20,7 @@ public class NoRotate extends Module {
     private boolean reset = false;
 
     public NoRotate() {
-        super("NoRotate", false);
+        super("NoRotate", Category.MISC, false);
     }
 
     @EventTarget

@@ -10,6 +10,7 @@ import myau.event.types.Priority;
 import myau.events.*;
 import myau.management.RotationState;
 import myau.mixin.IAccessorPlayerControllerMP;
+import myau.module.Category;
 import myau.module.Module;
 import myau.util.*;
 import myau.property.properties.*;
@@ -315,7 +316,7 @@ public class BedNuker extends Module {
     }
 
     public BedNuker() {
-        super("BedNuker", false);
+        super("BedNuker", Category.PLAYER, false);
     }
 
     public boolean isReady() {

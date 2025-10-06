@@ -5,6 +5,7 @@ import myau.event.EventTarget;
 import myau.event.types.EventType;
 import myau.events.KeyEvent;
 import myau.events.TickEvent;
+import myau.module.Category;
 import myau.module.Module;
 import myau.util.*;
 import myau.property.properties.BooleanProperty;
@@ -66,7 +67,7 @@ public class AimAssist extends Module {
     }
 
     public AimAssist() {
-        super("AimAssist", false);
+        super("AimAssist", Category.COMBAT, false);
     }
 
     @EventTarget

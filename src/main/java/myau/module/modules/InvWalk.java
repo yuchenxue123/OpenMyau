@@ -9,6 +9,7 @@ import myau.events.PacketEvent;
 import myau.events.TickEvent;
 import myau.events.UpdateEvent;
 import myau.mixin.IAccessorC0DPacketCloseWindow;
+import myau.module.Category;
 import myau.module.Module;
 import myau.util.KeyBindUtil;
 import myau.util.PacketUtil;
@@ -35,7 +36,7 @@ public class InvWalk extends Module {
     public final ModeProperty mode = new ModeProperty("mode", 1, new String[]{"VANILLA", "LEGIT", "HYPIXEL"});
 
     public InvWalk() {
-        super("InvWalk", false);
+        super("InvWalk", Category.MOVEMENT, false);
     }
 
     public void pressMovementKeys() {

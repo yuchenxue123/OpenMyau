@@ -2,6 +2,7 @@ package myau.module.modules;
 
 import myau.event.EventTarget;
 import myau.events.RenderLivingEvent;
+import myau.module.Category;
 import myau.module.Module;
 import myau.util.TeamUtil;
 import myau.property.properties.BooleanProperty;
@@ -65,7 +66,7 @@ public class Chams extends Module {
     }
 
     public Chams() {
-        super("Chams", false);
+        super("Chams", Category.RENDER, false);
     }
 
     @EventTarget

@@ -1,5 +1,6 @@
 package myau.module.modules;
 
+import myau.module.Category;
 import myau.module.Module;
 import myau.property.properties.BooleanProperty;
 import myau.property.properties.FloatProperty;
@@ -15,7 +16,7 @@ public class Jesus extends Module {
     public final BooleanProperty groundOnly = new BooleanProperty("ground-only", true);
 
     public Jesus() {
-        super("Jesus", false);
+        super("Jesus", Category.MOVEMENT, false);
     }
 
     @Override

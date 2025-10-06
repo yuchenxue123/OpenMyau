@@ -3,6 +3,7 @@ package myau.module.modules;
 import myau.event.EventTarget;
 import myau.events.Render3DEvent;
 import myau.mixin.IAccessorRenderManager;
+import myau.module.Category;
 import myau.module.Module;
 import myau.util.RenderUtil;
 import myau.property.properties.BooleanProperty;
@@ -30,7 +31,7 @@ public class Trajectories extends Module {
     public final BooleanProperty pearls = new BooleanProperty("pearls", true);
 
     public Trajectories() {
-        super("Trajectories", false, true);
+        super("Trajectories", Category.RENDER, false, true);
     }
 
     @EventTarget

@@ -4,6 +4,7 @@ import myau.event.EventTarget;
 import myau.event.types.EventType;
 import myau.events.UpdateEvent;
 import myau.events.WindowClickEvent;
+import myau.module.Category;
 import myau.module.Module;
 import myau.util.ItemUtil;
 import myau.property.properties.BooleanProperty;
@@ -63,7 +64,7 @@ public class InvManager extends Module {
     }
 
     public InvManager() {
-        super("InvManager", false);
+        super("InvManager", Category.PLAYER, false);
     }
 
     @EventTarget

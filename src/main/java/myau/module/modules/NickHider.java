@@ -1,6 +1,7 @@
 package myau.module.modules;
 
 import myau.enums.ChatColors;
+import myau.module.Category;
 import myau.module.Module;
 import myau.property.properties.BooleanProperty;
 import myau.property.properties.TextProperty;
@@ -15,7 +16,7 @@ public class NickHider extends Module {
     public final BooleanProperty level = new BooleanProperty("level", true);
 
     public NickHider() {
-        super("NickHider", false, true);
+        super("NickHider", Category.PLAYER, false, true);
     }
 
     public String replaceNick(String input) {

@@ -4,6 +4,7 @@ import myau.event.EventTarget;
 import myau.event.types.EventType;
 import myau.events.TickEvent;
 import myau.mixin.IAccessorMinecraft;
+import myau.module.Category;
 import myau.module.Module;
 import myau.util.RotationUtil;
 import myau.property.properties.BooleanProperty;
@@ -51,7 +52,7 @@ public class FastPlace extends Module {
     }
 
     public FastPlace() {
-        super("FastPlace", false);
+        super("FastPlace", Category.PLAYER, false);
     }
 
     @EventTarget

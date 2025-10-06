@@ -5,6 +5,7 @@ import myau.event.EventTarget;
 import myau.event.types.EventType;
 import myau.events.UpdateEvent;
 import myau.events.WindowClickEvent;
+import myau.module.Category;
 import myau.module.Module;
 import myau.util.ChatUtil;
 import myau.util.ItemUtil;
@@ -43,7 +44,7 @@ public class ChestStealer extends Module {
     }
 
     public ChestStealer() {
-        super("ChestStealer", false);
+        super("ChestStealer", Category.PLAYER, false);
     }
 
     @EventTarget

@@ -2,6 +2,7 @@ package myau.module.modules;
 
 import myau.event.EventTarget;
 import myau.events.Render2DEvent;
+import myau.module.Category;
 import myau.module.Module;
 import myau.util.TimerUtil;
 import myau.property.properties.FloatProperty;
@@ -18,7 +19,7 @@ public class Spammer extends Module {
     public final IntProperty random = new IntProperty("random", 0, 0, 10);
 
     public Spammer() {
-        super("Spammer", false);
+        super("Spammer", Category.MISC, false);
     }
 
     @EventTarget

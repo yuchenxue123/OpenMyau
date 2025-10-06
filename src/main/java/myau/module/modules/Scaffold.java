@@ -6,6 +6,7 @@ import myau.event.types.EventType;
 import myau.event.types.Priority;
 import myau.events.*;
 import myau.management.RotationState;
+import myau.module.Category;
 import myau.module.Module;
 import myau.util.*;
 import myau.property.properties.BooleanProperty;
@@ -238,7 +239,7 @@ public class Scaffold extends Module {
     }
 
     public Scaffold() {
-        super("Scaffold", false);
+        super("Scaffold", Category.PLAYER, false);
     }
 
     public int getSlot() {

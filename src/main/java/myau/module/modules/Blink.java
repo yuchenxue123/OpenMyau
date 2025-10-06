@@ -7,6 +7,7 @@ import myau.event.types.EventType;
 import myau.event.types.Priority;
 import myau.events.LoadWorldEvent;
 import myau.events.TickEvent;
+import myau.module.Category;
 import myau.module.Module;
 import myau.property.properties.IntProperty;
 import myau.property.properties.ModeProperty;
@@ -16,7 +17,7 @@ public class Blink extends Module {
     public final IntProperty ticks = new IntProperty("ticks", 200, 0, 12000);
 
     public Blink() {
-        super("Blink", false);
+        super("Blink", Category.PLAYER, false);
     }
 
     @EventTarget(Priority.LOWEST)

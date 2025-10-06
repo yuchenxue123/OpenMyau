@@ -3,6 +3,7 @@ package myau.module.modules;
 import myau.event.EventTarget;
 import myau.event.types.EventType;
 import myau.events.PacketEvent;
+import myau.module.Category;
 import myau.module.Module;
 import myau.util.ChatUtil;
 import net.minecraft.client.Minecraft;
@@ -37,7 +38,7 @@ public class LightningTracker extends Module {
     }
 
     public LightningTracker() {
-        super("LightningTracker", false, true);
+        super("LightningTracker", Category.MISC, false, true);
     }
 
     @EventTarget

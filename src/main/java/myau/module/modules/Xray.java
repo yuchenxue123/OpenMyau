@@ -6,6 +6,7 @@ import myau.events.LoadWorldEvent;
 import myau.events.PacketEvent;
 import myau.events.Render3DEvent;
 import myau.mixin.IAccessorMinecraft;
+import myau.module.Category;
 import myau.module.Module;
 import myau.util.RenderUtil;
 import myau.property.properties.*;
@@ -146,7 +147,7 @@ public class Xray extends Module {
     }
 
     public Xray() {
-        super("Xray", false);
+        super("Xray", Category.RENDER, false);
     }
 
     public boolean shouldRenderSide(int blockId) {

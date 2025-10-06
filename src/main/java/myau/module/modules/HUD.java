@@ -8,6 +8,7 @@ import myau.event.types.EventType;
 import myau.events.Render2DEvent;
 import myau.events.TickEvent;
 import myau.mixin.IAccessorGuiChat;
+import myau.module.Category;
 import myau.module.Module;
 import myau.util.ColorUtil;
 import myau.util.RenderUtil;
@@ -92,7 +93,7 @@ public class HUD extends Module {
     }
 
     public HUD() {
-        super("HUD", true, true);
+        super("HUD", Category.RENDER, true, true);
     }
 
     public Color getColor(long time) {

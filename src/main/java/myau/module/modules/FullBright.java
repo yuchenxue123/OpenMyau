@@ -3,6 +3,7 @@ package myau.module.modules;
 import myau.event.EventTarget;
 import myau.event.types.EventType;
 import myau.events.TickEvent;
+import myau.module.Category;
 import myau.module.Module;
 import myau.property.properties.ModeProperty;
 import net.minecraft.client.Minecraft;
@@ -16,7 +17,7 @@ public class FullBright extends Module {
     public final ModeProperty mode = new ModeProperty("mode", 0, new String[]{"GAMMA", "EFFECT"});
 
     public FullBright() {
-        super("Fullbright", true, true);
+        super("Fullbright", Category.RENDER, true, true);
     }
 
     @EventTarget

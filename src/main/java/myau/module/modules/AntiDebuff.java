@@ -1,5 +1,6 @@
 package myau.module.modules;
 
+import myau.module.Category;
 import myau.module.Module;
 import myau.property.properties.BooleanProperty;
 
@@ -8,6 +9,6 @@ public class AntiDebuff extends Module {
     public final BooleanProperty nausea = new BooleanProperty("nausea", true);
 
     public AntiDebuff() {
-        super("AntiDebuff", false);
+        super("AntiDebuff", Category.RENDER, false);
     }
 }
