@@ -45,4 +45,9 @@ public class BooleanProperty extends Property<Boolean> implements BooleanSetting
     public void write(JsonObject jsonObject) {
         jsonObject.addProperty(this.getName(), this.getValue());
     }
+
+    @Override
+    public void toggle() {
+        this.setValue(!this.getValue());
+    }
 }

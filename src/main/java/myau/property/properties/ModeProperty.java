@@ -59,4 +59,20 @@ public class ModeProperty extends Property<Integer> implements ModeSetting {
     public String[] modes() {
         return this.modes;
     }
+
+    @Override
+    public String getMode() {
+        Integer index = this.getValue();
+        return (index >= 0 && index < this.modes.length) ? this.modes[index] : "ERROR";
+    }
+
+    @Override
+    public void next() {
+        this.setValue((this.getValue() + 1 ) % this.modes.length);
+    }
+
+    @Override
+    public void prev() {
+        this.setValue((this.getValue() - 1 + modes.length) % modes.length);
+    }
 }
