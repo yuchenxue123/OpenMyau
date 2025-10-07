@@ -1,16 +1,16 @@
-package myau.ui.screen;
+package myau.ui.screen.clickgui;
 
 import myau.Myau;
 import myau.module.Module;
 import myau.property.Property;
 import myau.ui.RenderUtils;
-import myau.ui.screen.element.CompositeLinkedElement;
-import myau.ui.screen.element.LinkedElement;
-import myau.ui.screen.setting.AbstractSettingElement;
+import myau.ui.element.CompositeLinkedElement;
+import myau.ui.element.LinkedElement;
+import myau.ui.screen.clickgui.setting.AbstractSettingElement;
 
 import java.util.ArrayList;
 
-import static myau.ui.screen.Information.*;
+import static myau.ui.screen.clickgui.Information.*;
 
 public class ModuleElement extends CompositeLinkedElement {
 

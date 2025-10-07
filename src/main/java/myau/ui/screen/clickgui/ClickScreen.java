@@ -1,4 +1,4 @@
-package myau.ui.screen;
+package myau.ui.screen.clickgui;
 
 import net.minecraft.client.gui.GuiScreen;
 

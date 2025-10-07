@@ -2,7 +2,7 @@ package myau.module.modules;
 
 import myau.module.Category;
 import myau.module.Module;
-import myau.ui.screen.ClickScreen;
+import myau.ui.screen.clickgui.ClickScreen;
 import net.minecraft.client.Minecraft;
 import org.lwjgl.input.Keyboard;
 

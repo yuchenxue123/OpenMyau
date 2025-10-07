@@ -1,4 +1,4 @@
-package myau.ui.screen.element;
+package myau.ui.element;
 
 public abstract class LinkedElement extends DefaultElement implements Position {
 

@@ -1,13 +1,13 @@
-package myau.ui.screen.setting;
+package myau.ui.screen.clickgui.setting;
 
 import myau.ui.RenderUtils;
-import myau.ui.setting.ModeSetting;
+import myau.ui.setting.BooleanSetting;
 
-import static myau.ui.screen.Information.*;
+import static myau.ui.screen.clickgui.Information.*;
 
-public class ModeSettingElement extends AbstractSettingElement<ModeSetting> {
+public class BooleanSettingElement extends AbstractSettingElement<BooleanSetting> {
 
-    public ModeSettingElement(ModeSetting setting) {
+    public BooleanSettingElement(BooleanSetting setting) {
         super(setting);
     }
 
@@ -21,10 +21,10 @@ public class ModeSettingElement extends AbstractSettingElement<ModeSetting> {
         );
 
         font.drawStringWithShadow(
-                setting.name() + " -> " + setting.getMode().toLowerCase(),
+                setting.name(),
                 getX() + SETTING_TEXT_SIDE_SPACE,
                 getY() + (height() - font.FONT_HEIGHT) / 2f,
-                DEFAULT_COLOR.getRGB()
+                (setting.value() ? ENABLED_COLOR : DEFAULT_COLOR).getRGB()
         );
 
         super.drawScreen(mouseX, mouseY, deltaTime);
@@ -33,13 +33,8 @@ public class ModeSettingElement extends AbstractSettingElement<ModeSetting> {
     @Override
     public void mouseClicked(int mouseX, int mouseY, int button) {
 
-        if (isHovered(mouseX, mouseY)) {
-            if (button == 0) {
-                setting.next();
-            }
-            if (button == 1) {
-                setting.prev();
-            }
+        if (isHovered(mouseX, mouseY) && button == 0) {
+            setting.toggle();
         }
 
         super.mouseClicked(mouseX, mouseY, button);

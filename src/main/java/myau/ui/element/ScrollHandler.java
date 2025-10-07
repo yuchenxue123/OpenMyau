@@ -1,4 +1,4 @@
-package myau.ui.screen.element;
+package myau.ui.element;
 
 import org.lwjgl.input.Keyboard;
 import org.lwjgl.input.Mouse;

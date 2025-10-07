@@ -1,7 +1,8 @@
-package myau.ui.screen.element;
+package myau.ui.element;
 
-import myau.ui.screen.data.PositionData;
+import myau.ui.data.PositionData;
 
+// Tag: 继承过多，耦合高了，希望解决
 public abstract class DraggableLinkedElement extends CompositeLinkedElement implements Moveable {
     private int baseX;
     private int baseY;

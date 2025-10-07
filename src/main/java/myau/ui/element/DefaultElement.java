@@ -1,9 +1,9 @@
-package myau.ui.screen.element;
+package myau.ui.element;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.FontRenderer;
 
-import static myau.ui.screen.Information.HEIGHT;
+import static myau.ui.screen.clickgui.Information.HEIGHT;
 
 public abstract class DefaultElement implements Screen {
     protected FontRenderer font = Minecraft.getMinecraft().fontRendererObj;

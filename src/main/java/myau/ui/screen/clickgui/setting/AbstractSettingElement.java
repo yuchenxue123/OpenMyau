@@ -1,11 +1,11 @@
-package myau.ui.screen.setting;
+package myau.ui.screen.clickgui.setting;
 
-import myau.ui.screen.element.LinkedElement;
+import myau.ui.element.LinkedElement;
 import myau.ui.setting.*;
 
 import java.util.function.Consumer;
 
-import static myau.ui.screen.Information.WIDTH;
+import static myau.ui.screen.clickgui.Information.WIDTH;
 
 public abstract class AbstractSettingElement<V extends Setting<?>> extends LinkedElement {
 

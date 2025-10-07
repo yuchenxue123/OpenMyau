@@ -1,11 +1,11 @@
-package myau.ui.screen;
+package myau.ui.screen.clickgui;
 
 import myau.module.Category;
-import myau.ui.screen.data.PositionData;
-import myau.ui.screen.element.CompositeLinkedElement;
-import myau.ui.screen.element.ScrollHandler;
+import myau.ui.data.PositionData;
+import myau.ui.element.CompositeLinkedElement;
+import myau.ui.element.ScrollHandler;
 
-import static myau.ui.screen.Information.*;
+import static myau.ui.screen.clickgui.Information.*;
 
 public class ClickMainElement extends CompositeLinkedElement {
 

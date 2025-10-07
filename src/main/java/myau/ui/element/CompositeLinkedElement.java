@@ -1,4 +1,4 @@
-package myau.ui.screen.element;
+package myau.ui.element;
 
 public abstract class CompositeLinkedElement extends LinkedElement {
     public final LinkedElementList children = new LinkedElementList(this);

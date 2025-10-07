@@ -1,10 +1,10 @@
-package myau.ui.screen.setting;
+package myau.ui.screen.clickgui.setting;
 
 import myau.ui.MathUtils;
 import myau.ui.RenderUtils;
 import myau.ui.setting.FloatSetting;
 
-import static myau.ui.screen.Information.*;
+import static myau.ui.screen.clickgui.Information.*;
 
 public class FloatSettingElement extends AbstractSettingElement<FloatSetting> {
 

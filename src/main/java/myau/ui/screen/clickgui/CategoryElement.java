@@ -1,11 +1,11 @@
-package myau.ui.screen;
+package myau.ui.screen.clickgui;
 
 import myau.module.Category;
 import myau.ui.RenderUtils;
-import myau.ui.screen.element.DraggableLinkedElement;
-import myau.ui.screen.element.Position;
+import myau.ui.element.DraggableLinkedElement;
+import myau.ui.element.Position;
 
-import static myau.ui.screen.Information.*;
+import static myau.ui.screen.clickgui.Information.*;
 
 public class CategoryElement extends DraggableLinkedElement {
 

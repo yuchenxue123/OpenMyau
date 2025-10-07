@@ -1,6 +1,6 @@
-package myau.ui.screen.data;
+package myau.ui.data;
 
-import myau.ui.screen.element.Position;
+import myau.ui.element.Position;
 
 public class PositionData implements Position {
 

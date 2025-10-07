@@ -1,9 +1,9 @@
-package myau.ui.screen.setting;
+package myau.ui.screen.clickgui.setting;
 
 import myau.ui.RenderUtils;
 import myau.ui.setting.TextSetting;
 
-import static myau.ui.screen.Information.*;
+import static myau.ui.screen.clickgui.Information.*;
 
 public class TextSettingElement extends AbstractSettingElement<TextSetting> {
 
