@@ -3,12 +3,12 @@ package myau.ui.screen.element;
 import myau.ui.screen.data.PositionData;
 
 public abstract class DraggableLinkedElement extends CompositeLinkedElement implements Moveable {
-    private int x;
-    private int y;
+    private int baseX;
+    private int baseY;
 
     public DraggableLinkedElement(int x, int y) {
-        this.x = x;
-        this.y = y;
+        this.baseX = x;
+        this.baseY = y;
     }
 
     private boolean dragging = false;
@@ -23,7 +23,7 @@ public abstract class DraggableLinkedElement extends CompositeLinkedElement impl
     protected void handleDraggableMouseClicked(int mouseX, int mouseY, int button) {
         if (isHovered(mouseX, mouseY) && button == 0) {
             dragging = true;
-            drag = new PositionData(mouseX - getX(), mouseY - getY());
+            drag = new PositionData(mouseX - baseX, mouseY - baseY);
         }
     }
 
@@ -41,17 +41,17 @@ public abstract class DraggableLinkedElement extends CompositeLinkedElement impl
 
     @Override
     public void move(int x, int y) {
-        this.x = x;
-        this.y = y;
+        this.baseX = x;
+        this.baseY = y;
     }
 
     @Override
     public int getX() {
-        return x;
+        return baseX;
     }
 
     @Override
     public int getY() {
-        return y;
+        return baseY;
     }
 }

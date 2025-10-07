@@ -1,6 +1,5 @@
 package myau.ui.screen;
 
-import javafx.geometry.Pos;
 import myau.module.Category;
 import myau.ui.RenderUtils;
 import myau.ui.screen.element.DraggableLinkedElement;
