@@ -1,5 +1,6 @@
 package myau.ui.screen.clickgui.setting;
 
+import myau.ui.DrawContext;
 import myau.ui.RenderUtils;
 import myau.ui.setting.ModeSetting;
 
@@ -12,22 +13,22 @@ public class ModeSettingElement extends AbstractSettingElement<ModeSetting> {
     }
 
     @Override
-    public void drawScreen(int mouseX, int mouseY, float deltaTime) {
+    public void drawScreen(DrawContext context, int mouseX, int mouseY, float deltaTime) {
 
-        RenderUtils.drawRect(
+        context.drawRect(
                 getX(), getY(),
                 WIDTH, height(),
                 SETTINGS_COLOR
         );
 
-        font.drawStringWithShadow(
+        context.drawText(
                 setting.name() + " -> " + setting.getMode().toLowerCase(),
                 getX() + SETTING_TEXT_SIDE_SPACE,
                 getY() + (height() - font.FONT_HEIGHT) / 2f,
                 DEFAULT_COLOR.getRGB()
         );
 
-        super.drawScreen(mouseX, mouseY, deltaTime);
+        super.drawScreen(context, mouseX, mouseY, deltaTime);
     }
 
     @Override

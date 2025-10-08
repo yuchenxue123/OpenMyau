@@ -1,5 +1,6 @@
 package myau.ui.screen.clickgui;
 
+import myau.ui.DrawContext;
 import net.minecraft.client.gui.GuiScreen;
 
 import java.io.IOException;
@@ -15,11 +16,12 @@ public class ClickScreen extends GuiScreen {
         return INSTANCE;
     }
 
+    private final DrawContext context = new DrawContext();
     private final ClickMainElement main = new ClickMainElement().build();
 
     @Override
     public void drawScreen(int mouseX, int mouseY, float deltaTime) {
-        main.drawScreen(mouseX, mouseY, deltaTime);
+        main.drawScreen(context, mouseX, mouseY, deltaTime);
     }
 
     @Override

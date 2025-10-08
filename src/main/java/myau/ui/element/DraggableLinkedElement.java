@@ -1,58 +1,58 @@
 package myau.ui.element;
 
-import myau.ui.data.PositionData;
+import myau.ui.DrawContext;
+import myau.ui.behavior.DraggableHandler;
+import myau.ui.behavior.Drawable;
 
-// Tag: 继承过多，耦合高了，希望解决
-public abstract class DraggableLinkedElement extends CompositeLinkedElement implements Moveable {
-    private int baseX;
-    private int baseY;
+public abstract class DraggableLinkedElement extends CompositeLinkedElement implements Drawable {
+    private final DraggableHandler handler;
 
-    public DraggableLinkedElement(int x, int y) {
-        this.baseX = x;
-        this.baseY = y;
+    public DraggableLinkedElement(DraggableHandler handler) {
+        this.handler = handler;
     }
 
-    private boolean dragging = false;
-    private PositionData drag = new PositionData(0, 0);
+    @Override
+    public void drawScreen(DrawContext context, int mouseX, int mouseY, float deltaTime) {
 
-    protected void handleDraggableDrawScreen(int mouseX, int mouseY, float deltaTime) {
-        if (dragging) {
-            move(mouseX - drag.getX(), mouseY -  drag.getY());
-        }
+        handler.onUpdatePosition(mouseX, mouseY);
+
+        render(context, mouseX, mouseY, deltaTime);
+
+        super.drawScreen(context, mouseX, mouseY, deltaTime);
     }
 
-    protected void handleDraggableMouseClicked(int mouseX, int mouseY, int button) {
-        if (isHovered(mouseX, mouseY) && button == 0) {
-            dragging = true;
-            drag = new PositionData(mouseX - baseX, mouseY - baseY);
-        }
+
+    @Override
+    public void mouseClicked(int mouseX, int mouseY, int button) {
+
+        handler.onMousePressed(mouseX, mouseY, button, isHovered(mouseX, mouseY));
+
+        super.mouseClicked(mouseX, mouseY, button);
     }
 
-    protected void handleDraggableMouseReleased(int mouseX, int mouseY, int button) {
-        dragging = false;
+    @Override
+    public void mouseReleased(int mouseX, int mouseY, int button) {
+
+        handler.onMouseReleased(mouseX, mouseY, button);
+
+        super.mouseReleased(mouseX, mouseY, button);
     }
 
     @Override
     public void onClose() {
 
-        dragging = false;
+        handler.onClose();
 
         super.onClose();
     }
 
     @Override
-    public void move(int x, int y) {
-        this.baseX = x;
-        this.baseY = y;
-    }
-
-    @Override
     public int getX() {
-        return baseX;
+        return handler.getX();
     }
 
     @Override
     public int getY() {
-        return baseY;
+        return handler.getY();
     }
 }

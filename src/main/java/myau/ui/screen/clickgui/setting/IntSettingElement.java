@@ -1,5 +1,6 @@
 package myau.ui.screen.clickgui.setting;
 
+import myau.ui.DrawContext;
 import myau.ui.MathUtils;
 import myau.ui.RenderUtils;
 import myau.ui.setting.IntSetting;
@@ -15,7 +16,7 @@ public class IntSettingElement extends AbstractSettingElement<IntSetting> {
     private boolean dragging = false;
 
     @Override
-    public void drawScreen(int mouseX, int mouseY, float deltaTime) {
+    public void drawScreen(DrawContext context, int mouseX, int mouseY, float deltaTime) {
 
         if (dragging) {
             float deltaX = MathUtils.limit(mouseX - getX(), 0, WIDTH);
@@ -27,7 +28,7 @@ public class IntSettingElement extends AbstractSettingElement<IntSetting> {
             setting.set(wrap);
         }
 
-        RenderUtils.drawRect(
+        context.drawRect(
                 getX(), getY(),
                 WIDTH, height(),
                 SETTINGS_COLOR
@@ -36,20 +37,20 @@ public class IntSettingElement extends AbstractSettingElement<IntSetting> {
         // 条
         float process = MathUtils.limit((float) (setting.value() - setting.min()) / (setting.max() - setting.min()));
         int width = MathUtils.limit((int) (process * WIDTH), 0, WIDTH);
-        RenderUtils.drawRect(
+        context.drawRect(
                 getX(), getY(),
                 width, height(),
                 SLIDER_COLOR
         );
 
-        font.drawStringWithShadow(
+        context.drawText(
                 setting.name() + " : " + setting.value(),
                 getX() + SETTING_TEXT_SIDE_SPACE,
                 getY() + (height() - font.FONT_HEIGHT) / 2f,
                 DEFAULT_COLOR.getRGB()
         );
 
-        super.drawScreen(mouseX, mouseY, deltaTime);
+        super.drawScreen(context, mouseX, mouseY, deltaTime);
     }
 
     @Override

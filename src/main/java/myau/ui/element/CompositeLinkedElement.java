@@ -1,5 +1,7 @@
 package myau.ui.element;
 
+import myau.ui.DrawContext;
+
 public abstract class CompositeLinkedElement extends LinkedElement {
     public final LinkedElementList children = new LinkedElementList(this);
 
@@ -12,11 +14,11 @@ public abstract class CompositeLinkedElement extends LinkedElement {
     }
 
     @Override
-    public void drawScreen(int mouseX, int mouseY, float deltaTime) {
+    public void drawScreen(DrawContext context, int mouseX, int mouseY, float deltaTime) {
         if (!isActive()) return;
         for (LinkedElement element : children) {
             if (!element.visible()) continue;
-            element.drawScreen(mouseX, mouseY, deltaTime);
+            element.drawScreen(context ,mouseX, mouseY, deltaTime);
         }
     }
 

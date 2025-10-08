@@ -1,4 +1,4 @@
-package myau.ui.element;
+package myau.ui.data;
 
 public interface Position {
 

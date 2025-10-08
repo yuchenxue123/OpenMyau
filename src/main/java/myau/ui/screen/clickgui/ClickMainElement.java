@@ -1,9 +1,10 @@
 package myau.ui.screen.clickgui;
 
 import myau.module.Category;
+import myau.ui.DrawContext;
 import myau.ui.data.PositionData;
 import myau.ui.element.CompositeLinkedElement;
-import myau.ui.element.ScrollHandler;
+import myau.ui.behavior.ScrollHandler;
 
 import static myau.ui.screen.clickgui.Information.*;
 
@@ -16,7 +17,7 @@ public class ClickMainElement extends CompositeLinkedElement {
         for (int i = 0; i < categories.length; i++) {
             add(new CategoryElement(
                     categories[i],
-                    new PositionData(START_X + i * (WIDTH + CATEGORY_SPACE), START_Y),
+                    PositionData.of(START_X + i * (WIDTH + CATEGORY_SPACE), START_Y),
                     handler
             ).build());
         }
@@ -24,11 +25,11 @@ public class ClickMainElement extends CompositeLinkedElement {
     }
 
     @Override
-    public void drawScreen(int mouseX, int mouseY, float deltaTime) {
+    public void drawScreen(DrawContext context, int mouseX, int mouseY, float deltaTime) {
 
         handler.handleMouseScrolled();
 
-        super.drawScreen(mouseX, mouseY, deltaTime);
+        super.drawScreen(context, mouseX, mouseY, deltaTime);
     }
 
     @Override

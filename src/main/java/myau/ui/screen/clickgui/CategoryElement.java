@@ -1,9 +1,11 @@
 package myau.ui.screen.clickgui;
 
 import myau.module.Category;
-import myau.ui.RenderUtils;
+import myau.ui.DrawContext;
+import myau.ui.behavior.DraggableHandler;
+import myau.ui.data.MutablePosition;
 import myau.ui.element.DraggableLinkedElement;
-import myau.ui.element.Position;
+import myau.ui.data.Position;
 
 import static myau.ui.screen.clickgui.Information.*;
 
@@ -13,8 +15,8 @@ public class CategoryElement extends DraggableLinkedElement {
 
     private final Position scroll;
 
-    public CategoryElement(Category category, Position position, Position scroll) {
-        super(position.getX(), position.getY());
+    public CategoryElement(Category category, MutablePosition position, Position scroll) {
+        super(new DraggableHandler(position));
         this.scroll = scroll;
         this.category = category;
     }
@@ -25,40 +27,19 @@ public class CategoryElement extends DraggableLinkedElement {
     }
 
     @Override
-    public void drawScreen(int mouseX, int mouseY, float deltaTime) {
-
-        handleDraggableDrawScreen(mouseX, mouseY, deltaTime);
-
-        RenderUtils.drawRect(
+    public void render(DrawContext context, int mouseX, int mouseY, float deltaTime) {
+        context.drawRect(
                 getX(), getY(),
                 WIDTH, height(),
                 CATEGORY_COLOR.getRGB()
         );
 
-        font.drawStringWithShadow(
+        context.drawText(
                 category.name(),
                 getX() + (WIDTH - font.getStringWidth(category.name())) / 2f,
                 getY() + (height() - font.FONT_HEIGHT) / 2f,
                 DEFAULT_COLOR.getRGB()
         );
-
-        super.drawScreen(mouseX, mouseY, deltaTime);
-    }
-
-    @Override
-    public void mouseClicked(int mouseX, int mouseY, int button) {
-
-        handleDraggableMouseClicked(mouseX, mouseY, button);
-
-        super.mouseClicked(mouseX, mouseY, button);
-    }
-
-    @Override
-    public void mouseReleased(int mouseX, int mouseY, int button) {
-
-        handleDraggableMouseReleased(mouseX, mouseY, button);
-
-        super.mouseReleased(mouseX, mouseY, button);
     }
 
     @Override

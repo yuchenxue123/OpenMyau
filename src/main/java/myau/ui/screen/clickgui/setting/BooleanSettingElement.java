@@ -1,5 +1,6 @@
 package myau.ui.screen.clickgui.setting;
 
+import myau.ui.DrawContext;
 import myau.ui.RenderUtils;
 import myau.ui.setting.BooleanSetting;
 
@@ -12,22 +13,22 @@ public class BooleanSettingElement extends AbstractSettingElement<BooleanSetting
     }
 
     @Override
-    public void drawScreen(int mouseX, int mouseY, float deltaTime) {
+    public void drawScreen(DrawContext context, int mouseX, int mouseY, float deltaTime) {
 
-        RenderUtils.drawRect(
+        context.drawRect(
                 getX(), getY(),
                 WIDTH, height(),
                 SETTINGS_COLOR
         );
 
-        font.drawStringWithShadow(
+        context.drawText(
                 setting.name(),
                 getX() + SETTING_TEXT_SIDE_SPACE,
                 getY() + (height() - font.FONT_HEIGHT) / 2f,
                 (setting.value() ? ENABLED_COLOR : DEFAULT_COLOR).getRGB()
         );
 
-        super.drawScreen(mouseX, mouseY, deltaTime);
+        super.drawScreen(context, mouseX, mouseY, deltaTime);
     }
 
     @Override

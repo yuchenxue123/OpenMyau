@@ -3,6 +3,7 @@ package myau.ui.screen.clickgui;
 import myau.Myau;
 import myau.module.Module;
 import myau.property.Property;
+import myau.ui.DrawContext;
 import myau.ui.RenderUtils;
 import myau.ui.element.CompositeLinkedElement;
 import myau.ui.element.LinkedElement;
@@ -29,22 +30,22 @@ public class ModuleElement extends CompositeLinkedElement {
     private boolean opened = false;
 
     @Override
-    public void drawScreen(int mouseX, int mouseY, float deltaTime) {
+    public void drawScreen(DrawContext context, int mouseX, int mouseY, float deltaTime) {
 
-        RenderUtils.drawRect(
+        context.drawRect(
                 getX(), getY(),
                 WIDTH, height(),
                 MODULE_COLOR.getRGB()
         );
 
-        font.drawStringWithShadow(
+        context.drawText(
                 module.getName().toLowerCase(),
                 getX() + MODULE_TEXT_SIDE_SPACE,
                 getY() + (height() - font.FONT_HEIGHT) / 2f,
                 (module.isEnabled() ? ENABLED_COLOR : DEFAULT_COLOR).getRGB()
         );
 
-        super.drawScreen(mouseX, mouseY, deltaTime);
+        super.drawScreen(context, mouseX, mouseY, deltaTime);
     }
 
     @Override

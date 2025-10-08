@@ -1,20 +1,23 @@
-package myau.ui.element;
+package myau.ui.behavior;
 
+import myau.ui.data.MutablePosition;
+import myau.ui.data.Position;
+import myau.ui.data.PositionData;
 import org.lwjgl.input.Keyboard;
 import org.lwjgl.input.Mouse;
 
 public class ScrollHandler implements Position {
-    private int scrollX = 0;
-    private int scrollY = 0;
+
+    private final MutablePosition scroll = PositionData.zero();
 
     public void handleMouseScrolled() {
         if (Mouse.hasWheel()) {
             int wheel = Mouse.getDWheel();
 
             if (Keyboard.isKeyDown(Keyboard.KEY_LCONTROL)) {
-                scrollX += wheel / 4;
+                scroll.setX(scroll.getX() + wheel / 4);
             } else {
-                scrollY += wheel / 4;
+                scroll.setY(scroll.getY() + wheel / 4);
             }
         }
 
@@ -22,11 +25,11 @@ public class ScrollHandler implements Position {
 
     @Override
     public int getX() {
-        return scrollX;
+        return scroll.getX();
     }
 
     @Override
     public int getY() {
-        return scrollY;
+        return scroll.getY();
     }
 }
