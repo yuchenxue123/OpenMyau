@@ -5,6 +5,7 @@ import myau.ui.setting.*;
 
 import java.util.function.Consumer;
 
+import static myau.ui.screen.clickgui.Information.HEIGHT;
 import static myau.ui.screen.clickgui.Information.WIDTH;
 
 public abstract class AbstractSettingElement<V extends Setting<?>> extends LinkedElement {
@@ -16,11 +17,6 @@ public abstract class AbstractSettingElement<V extends Setting<?>> extends Linke
     }
 
     @Override
-    public boolean isHovered(int mouseX, int mouseY) {
-        return isHovered(getX(), getY(), WIDTH, height(), mouseX, mouseY);
-    }
-
-    @Override
     public int getX() {
         return prev.getX();
     }
@@ -28,6 +24,16 @@ public abstract class AbstractSettingElement<V extends Setting<?>> extends Linke
     @Override
     public int getY() {
         return prev.getY() + prev.height();
+    }
+
+    @Override
+    public int width() {
+        return WIDTH;
+    }
+
+    @Override
+    public int height() {
+        return HEIGHT;
     }
 
     public static void create(Setting<?> setting, Consumer<LinkedElement> action) {

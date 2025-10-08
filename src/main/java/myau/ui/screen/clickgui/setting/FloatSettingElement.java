@@ -32,7 +32,7 @@ public class FloatSettingElement extends AbstractSettingElement<FloatSetting> {
 
         context.drawRect(
                 getX(), getY(),
-                WIDTH, height(),
+                width(), height(),
                 SETTINGS_COLOR
         );
 

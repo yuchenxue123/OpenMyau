@@ -2,7 +2,6 @@ package myau.ui.screen.clickgui.setting;
 
 import myau.ui.DrawContext;
 import myau.ui.MathUtils;
-import myau.ui.RenderUtils;
 import myau.ui.setting.IntSetting;
 
 import static myau.ui.screen.clickgui.Information.*;
@@ -30,7 +29,7 @@ public class IntSettingElement extends AbstractSettingElement<IntSetting> {
 
         context.drawRect(
                 getX(), getY(),
-                WIDTH, height(),
+                width(), height(),
                 SETTINGS_COLOR
         );
 

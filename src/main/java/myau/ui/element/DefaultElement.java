@@ -1,13 +1,10 @@
 package myau.ui.element;
 
-import myau.ui.behavior.Hovered;
-import myau.ui.data.Position;
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.FontRenderer;
+import myau.ui.RenderUtils;
+import myau.ui.behavior.Openable;
+import myau.ui.data.Rect;
 
-import static myau.ui.screen.clickgui.Information.HEIGHT;
-
-public abstract class DefaultElement implements Screen, Position, Hovered {
+public abstract class DefaultElement implements Screen, Rect, Openable {
 
     @Override
     public int getX() {
@@ -19,15 +16,29 @@ public abstract class DefaultElement implements Screen, Position, Hovered {
         return 0;
     }
 
-    public int height() {
-        return HEIGHT;
+    @Override
+    public int width() {
+        return 0;
     }
 
-    public int getTotalHeight() {
+    @Override
+    public int height() {
+        return 0;
+    }
+
+    @Override
+    public int getWidth() {
+        return width();
+    }
+
+    @Override
+    public int getHeight() {
         return height();
     }
 
-    protected boolean isHovered(int x, int y, int width, int height, int mouseX, int mouseY) {
-        return mouseX >= x && mouseX <= x + width && mouseY >= y && mouseY <= y + height;
+    @Override
+    public boolean isHovered(int mouseX, int mouseY) {
+        return RenderUtils.isHovered(getX(), getY(), width(), height(), mouseX, mouseY);
     }
+
 }

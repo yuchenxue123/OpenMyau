@@ -2,24 +2,22 @@ package myau.ui.screen.clickgui;
 
 import myau.module.Category;
 import myau.ui.DrawContext;
-import myau.ui.data.PositionData;
-import myau.ui.element.CompositeLinkedElement;
 import myau.ui.behavior.ScrollHandler;
+import myau.ui.element.DefaultElement;
+import myau.ui.element.LinkedElement;
+import myau.ui.element.Screen;
 
-import static myau.ui.screen.clickgui.Information.*;
+import java.util.ArrayList;
 
-public class ClickMainElement extends CompositeLinkedElement {
+public class ClickMainElement extends DefaultElement {
 
-    private final ScrollHandler handler = new ScrollHandler();
+    private final ArrayList<LinkedElement> elements = new ArrayList<>();
+
+    private final ScrollHandler scrollHandler = new ScrollHandler();
 
     public ClickMainElement build() {
-        Category[] categories = Category.values();
-        for (int i = 0; i < categories.length; i++) {
-            add(new CategoryElement(
-                    categories[i],
-                    PositionData.of(START_X + i * (WIDTH + CATEGORY_SPACE), START_Y),
-                    handler
-            ).build());
+        for (Category category : Category.values()) {
+            elements.add(new CategoryElement(category, scrollHandler).build());
         }
         return this;
     }
@@ -27,14 +25,28 @@ public class ClickMainElement extends CompositeLinkedElement {
     @Override
     public void drawScreen(DrawContext context, int mouseX, int mouseY, float deltaTime) {
 
-        handler.handleMouseScrolled();
+        scrollHandler.handleMouseScrolled();
 
-        super.drawScreen(context, mouseX, mouseY, deltaTime);
+        elements.forEach(element -> element.drawScreen(context, mouseX, mouseY, deltaTime));
     }
 
     @Override
-    public boolean isHovered(int mouseX, int mouseY) {
-        // haha
-        return false;
+    public void mouseClicked(int mouseX, int mouseY, int button) {
+        elements.forEach(element -> element.mouseClicked(mouseX, mouseY, button));
+    }
+
+    @Override
+    public void mouseReleased(int mouseX, int mouseY, int button) {
+        elements.forEach(element -> element.mouseReleased(mouseX, mouseY, button));
+    }
+
+    @Override
+    public void keyTyped(char character, int keyCode) {
+        elements.forEach(element -> element.keyTyped(character, keyCode));
+    }
+
+    @Override
+    public void onClose() {
+        elements.forEach(Screen::onClose);
     }
 }

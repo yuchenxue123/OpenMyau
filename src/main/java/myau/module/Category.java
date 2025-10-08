@@ -7,13 +7,19 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public enum Category {
-    COMBAT,
-    MOVEMENT,
-    PLAYER,
-    RENDER,
-    MISC
+    COMBAT(0),
+    MOVEMENT(1),
+    PLAYER(2),
+    RENDER(3),
+    MISC(4)
 
     ;
+
+    public final int id;
+
+    Category(int id) {
+        this.id = id;
+    }
 
     public List<Module> getModules() {
         return Myau.moduleManager.modules.values().stream()

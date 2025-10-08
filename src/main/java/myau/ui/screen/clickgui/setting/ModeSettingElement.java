@@ -1,7 +1,6 @@
 package myau.ui.screen.clickgui.setting;
 
 import myau.ui.DrawContext;
-import myau.ui.RenderUtils;
 import myau.ui.setting.ModeSetting;
 
 import static myau.ui.screen.clickgui.Information.*;
@@ -17,7 +16,7 @@ public class ModeSettingElement extends AbstractSettingElement<ModeSetting> {
 
         context.drawRect(
                 getX(), getY(),
-                WIDTH, height(),
+                width(), height(),
                 SETTINGS_COLOR
         );
 

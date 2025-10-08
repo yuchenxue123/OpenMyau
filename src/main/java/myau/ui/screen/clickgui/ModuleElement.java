@@ -4,7 +4,6 @@ import myau.Myau;
 import myau.module.Module;
 import myau.property.Property;
 import myau.ui.DrawContext;
-import myau.ui.RenderUtils;
 import myau.ui.element.CompositeLinkedElement;
 import myau.ui.element.LinkedElement;
 import myau.ui.screen.clickgui.setting.AbstractSettingElement;
@@ -34,7 +33,7 @@ public class ModuleElement extends CompositeLinkedElement {
 
         context.drawRect(
                 getX(), getY(),
-                WIDTH, height(),
+                width(), height(),
                 MODULE_COLOR.getRGB()
         );
 
@@ -66,27 +65,32 @@ public class ModuleElement extends CompositeLinkedElement {
     }
 
     @Override
-    public int getTotalHeight() {
-        int height = 0;
-        for (LinkedElement child : children) {
-            height += child.getTotalHeight();
-        }
-        return super.getTotalHeight() + (opened ? height : 0);
-    }
-
-    @Override
     public int getX() {
         return prev.getX();
     }
 
     @Override
     public int getY() {
-        return prev.getY() + prev.getTotalHeight();
+        return prev.getY() + prev.getHeight();
     }
 
     @Override
-    public boolean isHovered(int mouseX, int mouseY) {
-        return isHovered(getX(), getY(), WIDTH, height(), mouseX, mouseY);
+    public int width() {
+        return WIDTH;
+    }
+
+    @Override
+    public int height() {
+        return HEIGHT;
+    }
+
+    @Override
+    public int getHeight() {
+        int height = 0;
+        for (LinkedElement child : children) {
+            height += child.getHeight();
+        }
+        return height() + (opened ? height : 0);
     }
 
     @Override
