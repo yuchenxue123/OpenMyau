@@ -24,7 +24,7 @@ public class ModeSettingElement extends AbstractSettingElement<ModeSetting> {
         context.drawText(
                 setting.name() + " -> " + setting.getMode().toLowerCase(),
                 getX() + SETTING_TEXT_SIDE_SPACE,
-                getY() + (height() - font.FONT_HEIGHT) / 2f,
+                getY() + (height() - context.height()) / 2f,
                 DEFAULT_COLOR.getRGB()
         );
 

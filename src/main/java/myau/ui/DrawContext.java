@@ -30,6 +30,14 @@ public class DrawContext {
         drawText(text, x, y, color, true);
     }
 
+    public int width(String text) {
+        return font.getStringWidth(text);
+    }
+
+    public int height() {
+        return font.FONT_HEIGHT;
+    }
+
     public void drawText(String text, int x, int y, int color) {
         drawText(text, x, y, color, true);
     }

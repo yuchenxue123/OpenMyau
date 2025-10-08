@@ -1,14 +1,23 @@
 package myau.ui.element;
 
+import myau.ui.behavior.Hovered;
+import myau.ui.data.Position;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.FontRenderer;
 
 import static myau.ui.screen.clickgui.Information.HEIGHT;
 
-public abstract class DefaultElement implements Screen {
-    protected FontRenderer font = Minecraft.getMinecraft().fontRendererObj;
+public abstract class DefaultElement implements Screen, Position, Hovered {
 
-    public abstract boolean isHovered(int mouseX, int mouseY);
+    @Override
+    public int getX() {
+        return 0;
+    }
+
+    @Override
+    public int getY() {
+        return 0;
+    }
 
     public int height() {
         return HEIGHT;

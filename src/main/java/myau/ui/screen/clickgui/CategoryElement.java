@@ -36,8 +36,8 @@ public class CategoryElement extends DraggableLinkedElement {
 
         context.drawText(
                 category.name(),
-                getX() + (WIDTH - font.getStringWidth(category.name())) / 2f,
-                getY() + (height() - font.FONT_HEIGHT) / 2f,
+                getX() + (WIDTH - context.width(category.name())) / 2f,
+                getY() + (height() - context.height()) / 2f,
                 DEFAULT_COLOR.getRGB()
         );
     }

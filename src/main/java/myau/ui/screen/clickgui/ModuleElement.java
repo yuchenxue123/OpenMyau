@@ -41,7 +41,7 @@ public class ModuleElement extends CompositeLinkedElement {
         context.drawText(
                 module.getName().toLowerCase(),
                 getX() + MODULE_TEXT_SIDE_SPACE,
-                getY() + (height() - font.FONT_HEIGHT) / 2f,
+                getY() + (height() - context.height()) / 2f,
                 (module.isEnabled() ? ENABLED_COLOR : DEFAULT_COLOR).getRGB()
         );
 

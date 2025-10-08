@@ -24,7 +24,7 @@ public class BooleanSettingElement extends AbstractSettingElement<BooleanSetting
         context.drawText(
                 setting.name(),
                 getX() + SETTING_TEXT_SIDE_SPACE,
-                getY() + (height() - font.FONT_HEIGHT) / 2f,
+                getY() + (height() - context.height()) / 2f,
                 (setting.value() ? ENABLED_COLOR : DEFAULT_COLOR).getRGB()
         );
 
