@@ -16,12 +16,11 @@ public class ClickScreen extends GuiScreen {
         return INSTANCE;
     }
 
-    private final DrawContext context = new DrawContext();
     private final ClickMainElement main = new ClickMainElement().build();
 
     @Override
     public void drawScreen(int mouseX, int mouseY, float deltaTime) {
-        main.drawScreen(context, mouseX, mouseY, deltaTime);
+        main.drawScreen(DrawContext.INSTANCE, mouseX, mouseY, deltaTime);
     }
 
     @Override

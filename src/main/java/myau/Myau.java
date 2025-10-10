@@ -109,6 +109,7 @@ public class Myau {
         moduleManager.modules.put(Wtap.class, new Wtap());
         moduleManager.modules.put(Xray.class, new Xray());
         moduleManager.modules.put(ClickGui.class, new ClickGui());
+        moduleManager.modules.put(CodeScreen.class, new CodeScreen());
         commandManager.commands.add(new BindCommand());
         commandManager.commands.add(new ConfigCommand());
         commandManager.commands.add(new DenickCommand());

@@ -47,6 +47,36 @@ public class LinkedElementList implements Iterable<LinkedElement> {
         add(element, size);
     }
 
+    public LinkedElement remove(int index) {
+        if (index < 0 || index >= size) {
+            throw new IndexOutOfBoundsException();
+        }
+
+        Node prev = head;
+        for (int i = 0; i < index; i++) {
+            prev = prev.next;
+        }
+        Node node = prev.next;
+        prev.next = node.next;
+        size--;
+        return node.element;
+    }
+
+    public LinkedElement remove(LinkedElement element) {
+        return remove(indexOf(element));
+    }
+
+    public int indexOf(LinkedElement element) {
+        Node prev = head;
+        for (int i = 0; i < size; i++) {
+            if (prev.element == element) {
+                return i;
+            }
+            prev = prev.next;
+        }
+        return -1;
+    }
+
     public LinkedElement get(int index) {
         if (index < 0 || index >= size) {
             throw new IndexOutOfBoundsException();

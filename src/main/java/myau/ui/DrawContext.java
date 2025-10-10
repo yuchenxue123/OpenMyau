@@ -8,6 +8,8 @@ import java.awt.*;
 
 public class DrawContext {
 
+    public static DrawContext INSTANCE = new DrawContext();
+
     private final FontRenderer font = Minecraft.getMinecraft().fontRendererObj;
 
     public void drawRect(int x, int y, int width, int height, Color color) {
